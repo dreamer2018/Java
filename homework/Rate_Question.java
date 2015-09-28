@@ -1,8 +1,9 @@
+
 /**
  * Created by zhoupan on 9/22/15.
  */
 import java.util.Scanner;
-public class question1 {
+public class Rate_Question{
     public static void main(String[] args){
         Scanner scanner=new Scanner(System.in);
         System.out.print("Loan Amount:");
@@ -16,7 +17,7 @@ public class question1 {
         Mon_pay=amount*rate/(1-1.0/(Math.pow(1+rate,12*time)));
         Tot_pay=12*time*Mon_pay;
         System.out.printf("Month Payment:%6.2f\n",Mon_pay);
-        System.out.printf("Total Payment:%6.2f\n", Tot_pay);
+        System.out.printf("Total Payment:%6.2f\n",Tot_pay);
         System.out.println("Payment#\t\tInterest\t\tPrincipal\t\tBalance\n");
         for(int i=1;i<=12*time;i++){
             interset=rate*balance;
