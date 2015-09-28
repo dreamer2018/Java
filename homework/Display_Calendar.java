@@ -2,9 +2,7 @@
  * Created by zhoupan on 9/22/15.
  */
 import javax.swing.JOptionPane;
-import java.util.*;
-
-public class question3 {
+public class Display_Calendar{
     static void Print(int year,String mon_name,int month,int week){
         System.out.println("\n\t\t\t\t"+mon_name+"\t"+year);
         System.out.println("___________________________________________________\n");
@@ -24,14 +22,19 @@ public class question3 {
     }
     public static void main(String[] args){
 
-        String str=JOptionPane.showInputDialog(null,"è¯·è¾“å…¥å¹´ä»½:","2015");
+        String str=JOptionPane.showInputDialog(null, "ÇëÊäÈëÄê·Ý:", "2015");
         int year=Integer.parseInt(str);
 
-        str=JOptionPane.showInputDialog(null,"è¯·è¾“å…¥ä¸€æœˆä¸€æ—¥ä¸ºå‘¨å‡ ï¼š","4");
+        str=JOptionPane.showInputDialog(null,"ÇëÊäÈëÒ»ÔÂÒ»ÈÕÎªÖÜ¼¸£º","4");
         int week=Integer.parseInt(str);
-        int[] month; //æ•°ç»„ç”¨äºŽè®°å½•æ¯ä¸ªæœˆçš„å¤©æ•°
-        int total=0;   //è®°å½•ä¸€å¹´çš„æ€»å¤©æ•°
-        if(((year/4)==0&&(year/100!=0))||(year/400==0)){
+        int[] month; //Êý×éÓÃÓÚ¼ÇÂ¼Ã¿¸öÔÂµÄÌìÊý
+        int total=0;   //¼ÇÂ¼Ò»ÄêµÄ×ÜÌìÊý
+        if(week>7)
+        {
+            JOptionPane.showMessageDialog(null,"ÄãÈ·¶¨ÓÐÐÇÆÚ"+week+"£¬Éµ±Æ£¡\n");
+            return;
+        }
+        if(((year%4)==0&&(year%100!=0))||(year%400==0)){
             month=new int[]{31,29,31,30,31,30,31,31,30,31,30,31};
         }
         else{
